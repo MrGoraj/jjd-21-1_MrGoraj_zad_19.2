@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+    <meta charset="UTF-8">
+    <title>JavaStart Bootcamp - Zadanie 19.2</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <p>Hasło:</p>
+  <label>
+    <input name="password" id="password" type="text" onkeyup='check();' />
+    <span id="min8Char"></span>
+    <span id="minOneUppercase"></span>
+    <span id="minOneLowercase"></span>
+    <span id="minOneSpecial"></span>
+  </label>
+  <p>Powtórz hasło:</p>
+  <label>
+    <input  name="confirm_password" id="confirm_password" type="text"  onkeyup='check();' /> 
+    <span id='message'></span>
+  </label>
+
+    <script src="checkpasswd.js"></script>
+
+</body>
+</html>
