@@ -1,31 +1,41 @@
 var check = function() {
 
-    // re = /[a-z]/;
-    // if(!re.test.document.getElementById('password')) {
-    //     document.getElementById('message').style.color = 'green';
-    //     document.getElementById('minOneLowercase').innerHTML = 'Hasło musi zawierać przynajmniej jedną małą listerę!';
-    // }  else {
-    //     document.getElementById('message').style.color = 'red';
-    //     document.getElementById('minOneLowercase').innerHTML = 'Hasło musi zawierać przynajmniej jedną małą listerę!';
-    // }
 
-    // re = /[A-Z]/;
-    // if(!re.test.document.getElementById('password')) {
-    //     document.getElementById('message').style.color = 'green';
-    //     document.getElementById('minOneUppercase').innerHTML = 'HHasło musi zawierać przynajmniej jedną dużą literę!';
-    // }  else {
-    //     document.getElementById('message').style.color = 'red';
-    //     document.getElementById('minOneUppercase').innerHTML = 'HHasło musi zawierać przynajmniej jedną dużą literę!';
-    // }
+    const reLow = /[a-z]/;
+    const pass = document.getElementById('password').value;
+    if (reLow.test.pass) {
+        document.getElementById('minOneLowercase').style.color = 'green';
+        document.getElementById('minOneLowercase').innerHTML = '<br> Hasło zawiera przynajmniej jedną małą listerę';
+    }  else {
+        document.getElementById('minOneLowercase').style.color = 'red';
+        document.getElementById('minOneLowercase').innerHTML = '<br> Hasło musi zawierać przynajmniej jedną małą listerę!';
+    }
 
-    // re = /^\w+$/;
-    // if(!re.test.document.getElementById('password')) {
-    //     document.getElementById('message').style.color = 'green';
-    //     document.getElementById('minOneSpecial').innerHTML = 'Hasło musi zawierać przynajmniej jeden znak specjalny!';
-    // }  else {
-    //     document.getElementById('message').style.color = 'red';
-    //     document.getElementById('minOneSpecial').innerHTML = 'Hasło musi zawierać przynajmniej jeden znak specjalny!';
-    // }
+    const reUp = /[A-Z]/;
+    if (reUp.test.pass) {
+        document.getElementById('minOneUppercase').style.color = 'green';
+        document.getElementById('minOneUppercase').innerHTML = '<br> Hasło zawiera przynajmniej jedną dużą literę';
+    }  else {
+        document.getElementById('minOneUppercase').style.color = 'red';
+        document.getElementById('minOneUppercase').innerHTML = '<br> Hasło musi zawierać przynajmniej jedną dużą literę!';
+    }
+
+    const reSpec = /^\w+$/;
+    if (reSpec.test.pass) {
+        document.getElementById('minOneSpecial').style.color = 'green';
+        document.getElementById('minOneSpecial').innerHTML = '<br> Hasło zawiera przynajmniej jeden znak specjalny';
+    }  else {
+        document.getElementById('minOneSpecial').style.color = 'red';
+        document.getElementById('minOneSpecial').innerHTML = '<br> Hasło musi zawierać przynajmniej jeden znak specjalny!';
+    }
+
+    if (pass.length > 8) {
+        document.getElementById('min8Char').style.color = 'green';
+        document.getElementById('min8Char').innerHTML = '<br> Hasło min 8 znaków';
+    } else {
+        document.getElementById('min8Char').style.color = 'red';
+        document.getElementById('min8Char').innerHTML = '<br> Hasło musi mieć min 8 znaków!';
+    }
 
     if (document.getElementById('password').value == document.getElementById('confirm_password').value) {
         document.getElementById('message').style.color = 'green';
