@@ -2,7 +2,7 @@ var check = function() {
 
 
     const reLow = /[a-z]/;
-    const pass = document.getElementById('password').value;
+    let pass = document.getElementById('password').value;
     if (reLow.test.pass) {
         document.getElementById('minOneLowercase').style.color = 'green';
         document.getElementById('minOneLowercase').innerHTML = '<br> Hasło zawiera przynajmniej jedną małą listerę';
@@ -29,7 +29,7 @@ var check = function() {
         document.getElementById('minOneSpecial').innerHTML = '<br> Hasło musi zawierać przynajmniej jeden znak specjalny!';
     }
 
-    if (pass.length > 8) {
+    if (pass.length > 7) {
         document.getElementById('min8Char').style.color = 'green';
         document.getElementById('min8Char').innerHTML = '<br> Hasło min 8 znaków';
     } else {
