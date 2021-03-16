@@ -3,7 +3,7 @@ var check = function() {
 
     const reLow = /[a-z]/;
     let pass = document.getElementById('password').value;
-    if (reLow.test.pass) {
+    if (reLow.test(pass)) {
         document.getElementById('minOneLowercase').style.color = 'green';
         document.getElementById('minOneLowercase').innerHTML = '<br> Hasło zawiera przynajmniej jedną małą listerę';
     }  else {
@@ -12,7 +12,7 @@ var check = function() {
     }
 
     const reUp = /[A-Z]/;
-    if (reUp.test.pass) {
+    if (reUp.test(pass)) {
         document.getElementById('minOneUppercase').style.color = 'green';
         document.getElementById('minOneUppercase').innerHTML = '<br> Hasło zawiera przynajmniej jedną dużą literę';
     }  else {
@@ -21,7 +21,7 @@ var check = function() {
     }
 
     const reSpec = /^\w+$/;
-    if (reSpec.test.pass) {
+    if (!reSpec.test(pass)) {
         document.getElementById('minOneSpecial').style.color = 'green';
         document.getElementById('minOneSpecial').innerHTML = '<br> Hasło zawiera przynajmniej jeden znak specjalny';
     }  else {
